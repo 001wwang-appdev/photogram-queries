@@ -11,4 +11,8 @@
 #
 
 class Comment < ApplicationRecord
+
+    def commenter
+        User.where({id: self.author_id}).first
+    end
 end
